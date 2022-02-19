@@ -1,3 +1,6 @@
+import { AreaProvider } from './providers/marketplace/telzir/area.provider'
+import { NationalFeeProvider } from './providers/marketplace/telzir/national-fee.provider'
+
 import * as Mongoose from "mongoose"
 
 let database: Mongoose.Connection

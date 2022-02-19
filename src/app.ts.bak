@@ -1,4 +1,12 @@
+import UserRouter from './routes/user.router'
+import PersonRouter from './routes/person.router'
+import AddressRouter from './routes/address.router'
+import ShelfRouter from './routes/shelf.router'
+import CartRouter from './routes/cart.router'
+import ProductRouter from './routes/product.router'
 import CheckoutRouter from './routes/checkout.router'
+import WalletRouter from './routes/wallet.router'
+import DeliveryRouter from './routes/delivery.router'
 import * as express from 'express'
 import * as logger from 'morgan'
 import * as bodyParser from 'body-parser'
@@ -33,7 +41,15 @@ class App {
     })
 
     this.express.use('/', router)
+    this.express.use('/api/v1/users', UserRouter)
+    this.express.use('/api/v1/people', PersonRouter)
+    this.express.use('/api/v1/addresses', AddressRouter)
+    this.express.use('/api/v1/shelfs', ShelfRouter)
+    this.express.use('/api/v1/carts', CartRouter)
+    this.express.use('/api/v1/products', ProductRouter)
+    this.express.use('/api/v1/wallets', WalletRouter)
     this.express.use('/api/v1/checkouts', CheckoutRouter)
+    this.express.use('/api/v1/deliveries', DeliveryRouter)
   }
 }
 

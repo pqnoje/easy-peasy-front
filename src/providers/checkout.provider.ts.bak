@@ -5,7 +5,7 @@ export class CheckoutProvider {
 	public static create() {
 		try {
 			mercadopago.configure({
-				access_token: ''
+				access_token: 'TEST-956035923250350-021300-53a14daae7b0e0d65eac594b1b3ee768-403240675'
 			})
 		
 			let preference = {
