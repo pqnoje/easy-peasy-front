@@ -19,7 +19,7 @@ class DeliveryRouter {
   }
   
   init() {
-    this.router.get('/', this.create)
+    this.router.post('/', this.create)
   }
 }
 

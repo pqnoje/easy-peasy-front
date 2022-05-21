@@ -7,8 +7,8 @@ export class CheckoutProvider {
 			mercadopago.configure({
 				access_token: ''
 			})
-		
-			let preference = {
+
+			let preferences = {
 				items: [
 					{
 						title: 'Meu produto',
@@ -18,17 +18,13 @@ export class CheckoutProvider {
 				]
 			}
 
-			mercadopago
-			.preferences
-			.create(preference)
-			.then(function(response){
-				console.log('response ======>')
-				console.log(response)
-				console.log('response.body.id')
-				console.log(response.body.id)
-			}).catch(function(error){
-				console.log(error);
-			})
+			mercadopago.preferences.create(preferences)
+				.then(
+					paymentResponse => {
+						console.log('~> response: ', paymentResponse)
+						console.log('~> response.body.id: ', paymentResponse.body.id)
+					})
+				.catch(error => console.log(error))
 		} catch (error) {
 			throw error
 		}
